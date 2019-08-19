@@ -5,7 +5,30 @@
 <!-- The information between the BODY and /BODY tags is displayed.-->
 <body>
 
+
+
 <H4>Posts</H4>
+
+
+{% block content %}
+    <form action="{{ url_for('sendPost') }}" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </p>
+        <p>
+            {{ form.text.label }}<br>
+            {{ form.text(size=32) }}
+
+        <p>{{ form.submit() }}</p>
+
+        </p>
+
+    </form>
+{% endblock %}
+
+
 {% for post in posts %}
     <div><p>says: <b>{{ post.text }}</b></p></div>
 {% endfor %}
