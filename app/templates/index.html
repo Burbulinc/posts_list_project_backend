@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Posts</title>
+</head>
+<!-- The information between the BODY and /BODY tags is displayed.-->
+<body>
+
+<H4>Posts</H4>
+{% for post in posts %}
+    <div><p>says: <b>{{ post.text }}</b></p></div>
+{% endfor %}
+</body>
+</html>
