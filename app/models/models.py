@@ -6,3 +6,6 @@ class Post(db.Model):
     user_name = db.Column(db.String(64))
     type = db.Column(db.String(20))
     text = db.Column(db.String(128))
+
+
+

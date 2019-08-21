@@ -1,8 +1,8 @@
-from flask import render_template, redirect, flash, url_for, request
+from flask import render_template, redirect, request
 
 from app import app, db
 from app.forms import SendPostForm
-from app.models import Post
+from app.models.models import Post
 
 
 @app.route('/')
@@ -22,3 +22,4 @@ def sendPost():
     db.session.add(u)
     db.session.commit()
     return redirect('/index')
+
